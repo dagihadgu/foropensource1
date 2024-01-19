@@ -1,0 +1,152 @@
+<!-- blogapp/templates/blogapp/contact/base_generic.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Blog{% endblock %}</title>
+    <style>
+      body{
+        position: relative;
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .top-nav{
+          height: 50px;
+          background-color: #272343;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding: 0 4rem;
+          color: #fff;
+          box-shadow: 1px 1px 4px #707070;
+      }
+      .logo{
+          font-weight: bold;
+          color: #fff;
+      }
+      .logo:hover{
+          color: teal;
+      }
+
+      .links-container{
+          display: flex;
+          gap: 10px;
+      }
+      .link{
+          text-decoration: none;
+          color: teal;
+          font-weight: 500;
+          text-transform: capitalize;
+      }
+      .link:hover{
+          color: #fff;
+      }
+
+
+      .about-me-container{
+        width: 900px;
+        min-height: 100vh;
+        margin: 0 auto;
+        line-height: 2;
+
+      }
+      .header{
+        color: #272343;
+      }
+
+      .footer{
+            display: flex;
+            background-color: #272343;
+            padding: 1rem 4rem;
+            gap: 10px;
+        }
+
+        .posts-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 3rem 1rem;
+            gap: 1rem;
+        }
+
+        .post-container{
+            background-color: #272343;
+            width: 300px;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 3px 6px;
+        }
+
+        .post-date{
+            color: teal;
+        }
+
+        .form{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        input{
+          width: 50%;
+          padding: 10px;
+          border: 1px solid teal;
+          border-radius: 3px;
+        }
+        textarea{
+          width: 50%;
+          padding: 10px;
+          border: 1px solid teal;
+          border-radius: 3px;
+        }
+        
+        button{
+          background-color: #272343;
+          padding: 10px;
+          color: #fff;
+          border: 1px solid teal;
+          border-radius: 3px;
+          width: 100px;
+          cursor: pointer;
+        }
+
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="logo" href="{% url 'post_list' %}" >DagiLogo</a>
+    <div class="links-container">
+        <a href="{% url 'post_list' %}" class="link">blog</a>
+        <a href="{% url 'about' %}"  class="link">about</a>
+        <a href="{% url 'contact' %}" class="link">contactMe</a>
+    </div>
+  </div>
+
+  <div class="about-me-container">
+
+    <div class="form">
+      <h1 class="header">Feel Free to contact me any time<span style="color: teal;font-family: 'Times New Roman', Times, serif;">!</span></h1>
+      <input type="text"  placeholder="name">
+      <input type="text" placeholder="email">
+      
+      <textarea cols="30" rows="10" placeholder="message"></textarea>
+      <button>contact</button>
+    </div>
+    
+
+  </div>
+
+  <div class="footer">
+    <a href="{% url 'post_list' %}" class="link">blog</a>
+    <a href="{% url 'about' %}"  class="link">about</a>
+    <a href="{% url 'contact' %}" class="link">contactMe</a>
+    <span style="margin-left: auto;color: #fff;">© 2024 dagmawi hadgu</span>
+  </div>  
+
+</body>
+</html>

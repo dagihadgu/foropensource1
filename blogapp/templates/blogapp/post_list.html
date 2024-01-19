@@ -1,0 +1,13 @@
+{% extends 'blogapp/base_generic.html' %}
+
+{% block content %}
+  {% for post in posts %}
+    <br>
+    <div class="post-container">
+      <p>Published by {{ post.author }} </p>
+      <span class="post-date">{{ post.published_date }}</span>
+      <h2><a>{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p><br><br>
+    </div>
+  {% endfor %}
+{% endblock %}

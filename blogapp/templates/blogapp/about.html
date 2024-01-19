@@ -1,0 +1,115 @@
+<!-- blogapp/templates/blogapp/about/base_generic.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Django Blog{% endblock %}</title>
+    <style>
+      body{
+          position: relative;
+          margin: 0;
+          padding: 0;
+          font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+      .top-nav{
+          height: 50px;
+          background-color: #272343;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 10px;
+          padding: 0 4rem;
+          color: #fff;
+          box-shadow: 1px 1px 4px #707070;
+      }
+      .logo{
+          font-weight: bold;
+          color: #fff;
+      }
+      .logo:hover{
+          color: teal;
+      }
+
+      .links-container{
+          display: flex;
+          gap: 10px;
+      }
+      .link{
+          text-decoration: none;
+          color: teal;
+          font-weight: 500;
+          text-transform: capitalize;
+      }
+      .link:hover{
+          color: #fff;
+      }
+
+
+      .about-me-container{
+        width: 900px;
+        min-height: 100vh;
+        margin: 0 auto;
+        line-height: 2;
+
+      }
+      .header{
+        color: #272343;
+      }
+
+      .footer{
+            display: flex;
+            background-color: #272343;
+            padding: 1rem 4rem;
+            gap: 10px;
+        }
+
+        .posts-container{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 3rem 1rem;
+            gap: 1rem;
+        }
+
+        .post-container{
+            background-color: #272343;
+            width: 300px;
+            color: #fff;
+            padding: 1rem 2rem;
+            border-radius: 3px 6px;
+        }
+
+        .post-date{
+            color: teal;
+        }
+
+  </style>
+</head>
+<body>
+  <div class="top-nav">
+    <a class="logo" href="{% url 'post_list' %}" >DagiLogo</a>
+    <div class="links-container">
+        <a href="{% url 'post_list' %}" class="link">blog</a>
+        <a href="{% url 'about' %}"  class="link">about</a>
+        <a href="{% url 'contact' %}" class="link">contactMe</a>
+    </div>
+  </div>
+
+  <div class="about-me-container">
+    <h1 class="header">Hello there<span style="color: teal;">!</span></h1>
+    <p>
+      My name is Dagmawi hadgu,i have been working as full stck developer for the past two yers and Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi molestias, cupiditate repellendus aliquid, ad, culpa facere ipsam error porro sapiente odio quidem. Neque accusantium molestiae ratione nulla officia iste, vitae consequatur id aut explicabo! Dignissimos veritatis minus similique. Corporis necessitatibus impedit tempore sed, odio dolorem, est provident fugiat nesciunt, beatae recusandae officiis. Perferendis, ex. Obcaecati exercitationem ipsa, tempora temporibus blanditiis repellendus suscipit vel odio eaque, itaque at id quam saepe! Fugit consequuntur corporis, assumenda harum quibusdam, dicta quos ad nam quis sit dignissimos sunt eius totam rem sed iure! Veritatis aut quis iusto quibusdam officia, magni rem eaque! Consequatur, labore.
+    </p>
+  </div>
+
+  <div class="footer">
+        <a href="{% url 'post_list' %}" class="link">blog</a>
+        <a href="{% url 'about' %}"  class="link">about</a>
+        <a href="{% url 'contact' %}" class="link">contactMe</a>
+    <span style="margin-left: auto;color: #fff;">© 2024 dagmawi hadgu</span>
+  </div>  
+
+</body>
+</html>
